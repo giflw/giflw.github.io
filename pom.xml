@@ -13,35 +13,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.jbake</groupId>
-            <artifactId>jbake-core</artifactId>
-            <version>2.6.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf</artifactId>
-            <version>3.0.15.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctorj</artifactId>
-            <version>2.5.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vladsch.flexmark</groupId>
-            <artifactId>flexmark</artifactId>
-            <version>0.64.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vladsch.flexmark</groupId>
-            <artifactId>flexmark-profile-pegdown</artifactId>
-            <version>0.64.0</version>
-        </dependency>
-    </dependencies>
-
     <build>
+        <directory>${project.basedir}/public</directory>
         <plugins>
             <plugin>
                 <groupId>org.jbake</groupId>
@@ -49,7 +22,7 @@
                 <version>0.3.5</version>
                 <configuration>
                     <inputDirectory>${project.basedir}</inputDirectory>
-                    <inputDirectory>${project.basedir}/public</inputDirectory>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
                     <!--<outputDirectory>${project.build.directory}/website</outputDirectory>-->
                 </configuration>
                 <executions>
@@ -60,6 +33,33 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jbake</groupId>
+                        <artifactId>jbake-core</artifactId>
+                        <version>2.6.7</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.thymeleaf</groupId>
+                        <artifactId>thymeleaf</artifactId>
+                        <version>3.0.15.RELEASE</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>2.5.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.vladsch.flexmark</groupId>
+                        <artifactId>flexmark</artifactId>
+                        <version>0.64.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.vladsch.flexmark</groupId>
+                        <artifactId>flexmark-profile-pegdown</artifactId>
+                        <version>0.64.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
